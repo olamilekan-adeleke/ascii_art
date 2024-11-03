@@ -37,19 +37,20 @@ fn main() {
         })
         .collect();
 
-    // loop {
-    for converter in &converters {
-        print!("{}", CLEAR_SCREEN);
-        // for entry in fs::read_dir("output").expect("Failed to read output directory") {
-        //     let entry = entry.expect("Failed to access directory entry");
-        //     fs::remove_file(entry.path()).expect("Failed to delete file");
-        // }
+    loop {
+        for converter in &converters {
+            print!("{}", CLEAR_SCREEN);
+            // for entry in fs::read_dir("output").expect("Failed to read output directory") {
+            //     let entry = entry.expect("Failed to access directory entry");
+            //     fs::remove_file(entry.path()).expect("Failed to delete file");
+            // }
 
-        converter.print_ascii_matrix();
+            converter.print_ascii_matrix();
 
-        std::io::stdout().flush().unwrap();
-        // refresh_finder();
-        thread::sleep(Duration::from_millis(100));
+            std::io::stdout().flush().unwrap();
+            // refresh_finder();
+            thread::sleep(Duration::from_millis(50));
+        }
     }
 
     fn refresh_finder() {
@@ -59,7 +60,6 @@ fn main() {
             .output()
             .expect("Failed to refresh Finder");
     }
-    // }
 
     // let image_to_ascii = ImageToAscii::new(image_path);
     // image_to_ascii.print_ascii_matrix();
