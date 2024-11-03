@@ -1,5 +1,3 @@
-use std::fs::File;
-
 use crate::image_processor::ImageProcessor;
 
 // const ASCII_CHARS: &str = "`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$";

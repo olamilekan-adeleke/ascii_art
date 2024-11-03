@@ -1,5 +1,5 @@
 // use ffmpeg_next as ffmpeg;
-use std::{fs, io::Write, process::Command, thread, time::Duration};
+use std::{io::Write, process::Command, thread, time::Duration};
 
 use image_to_ascii::ImageToAscii;
 

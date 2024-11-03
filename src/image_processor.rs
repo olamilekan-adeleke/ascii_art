@@ -61,24 +61,9 @@ impl ImageProcessor {
     }
 
     fn set_brightness_matrix(&self, pixel: PixelsData) -> PixelsData {
-        // let height = pixel.len();
-        // let width = pixel[0].len();
-        // let mut brightness = vec![vec![0; width]; height];
-        //
-        // for i in 0..height {
-        //     for j in 0..width {
-        //         let [r, g, b] = pixel[i][j];
-        //         // Calculate average brightness
-        //         brightness[i][j] = ((r as u16 + g as u16 + b as u16) / 3) as u8;
-        //     }
-        // }
-        //
-        // brightness
-
         let height = pixel.len();
         let width = pixel[0].len();
         let mut pixels = vec![vec![0; width]; height];
-        // println!("pixels: {:?}", pixel);
 
         for i in 0..height {
             for j in 0..width {
@@ -86,21 +71,8 @@ impl ImageProcessor {
                 let g = (pixel[i][j] >> 8) & 0xff;
                 let b = pixel[i][j] & 0xff;
 
-                // println!("let [r, g, b] = {}", pixel[i][j]);
-                // let r = (pixel[i][j]) & 0xff;
-                // let g = (pixel[i][j]) & 0xff;
-                // let b = pixel[i][j] & 0xff;
-
                 let average = (r + g + b) / 3;
-                // let average = ((r as u16 + g as u16 + b as u16) / 3) as i32;
-                // println!("i: {} j: {} | j-size: {}", i, j, pixels.index(0).len());
-
                 pixels[i][j] = average;
-
-                // println!(
-                //     "R: {}, G:{}, B:{} | pixels[i][j]: {}-{} | average: {}",
-                //     r, g, b, i, j, average
-                // );
             }
         }
 
